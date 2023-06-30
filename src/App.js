@@ -3,6 +3,7 @@ import './App.css';
 import BoardList from './components/BoardList';
 import CardList from './components/CardList';
 
+
 function App() {
 
   const [boardData, setBoardData] = useState([]);
