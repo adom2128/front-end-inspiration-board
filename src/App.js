@@ -20,8 +20,8 @@ function App() {
           />
         </div>
         <div>
-          <CardList 
-            boards={boardData.cards}
+          <Board
+            boards={boardData}
           />
         </div>
       </main>

@@ -1,7 +1,15 @@
 import React from 'react';
 
-const Board = ({ id, title, owner }) => {
+const Board = ({ boards }) => {
+    return (
+        //display board name
 
+        <CardList 
+            cards={boards.cards}
+        />
+
+        //display board owner
+    );
 };
 
 export default Board;
