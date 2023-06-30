@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import BoardList from './components/BoardList';
+import CardList from './components/CardList';
 
 function App() {
+
+  const [boardData, setBoardData] = useState([]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Inspiration Board</h1>
       </header>
+      <main>
+        <div>
+          <BoardList 
+            boards={boardData}
+          />
+        </div>
+        <div>
+          <CardList 
+            boards={boardData.cards}
+          />
+        </div>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
