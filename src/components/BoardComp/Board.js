@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Board = ({ boards }) => {
+const Board = ({ boardID }) => {
+
     return (
         //display board name
 
         <CardList 
-            cards={boards.cards}
+            cards={boardID.cards}
         />
 
         //display board owner

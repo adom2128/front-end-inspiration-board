@@ -15,8 +15,8 @@ const postCard = (message) => {
     });
 };
 
-const getCardsOfOneBoard = () => {
-    axios.get('https://cada-inspo-board.onrender.com/boards/<board_id>/cards') 
+const getCards = (id) => {
+    axios.get(`https://cada-inspo-board.onrender.com/boards/${id}/cards`) 
     .then((response) => {
         console.log(response.data)
         return response.data
@@ -27,8 +27,8 @@ const getCardsOfOneBoard = () => {
     });
 };
 
-const putLikeCard = () => {
-    axios.get('https://cada-inspo-board.onrender.com/cards/<card_id>/like') 
+const putLikeCard = (id) => {
+    axios.get(`https://cada-inspo-board.onrender.com/cards/${id}/like`) 
     .then((response) => {
         console.log(response.data)
         return response.data
