@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import Board from './components/Board'
 import BoardList from './components/BoardList';
 import CardList from './components/CardList';
+
 
 
 function App() {
@@ -25,6 +27,11 @@ function App() {
           />
         </div>
       </main>
+      <footer className="App-footer">
+        <div>
+        &copy; 2023 Alejandra Dominguez, Angie Tran, Cindy Vides, Danica Sarmiento
+        </div>
+      </footer>
     </div>
   );
 };
