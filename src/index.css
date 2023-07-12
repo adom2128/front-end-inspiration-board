@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap");
 
 :root {
-
   /* Colors */
   --dark-teal: #0097a7;
   --gray: #eeeeeeff;
@@ -11,7 +10,7 @@
 }
 
 body {
-  font-family: 'Lobster';
+  font-family: "Lobster";
   font-size: 16px;
   line-height: 1.5;
   color: red;
@@ -19,6 +18,6 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

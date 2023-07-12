@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
-import './App.css';
-import Board from './components/Board'
-import BoardList from './components/BoardList';
-import CardList from './components/CardList';
-
-
+import React, { useEffect, useState } from "react";
+import Board from "./components/BoardComp/Board";
+import BoardList from "./components/BoardListComp/BoardList";
+import { getAllBoards } from "./api/BoardsRequests";
+import "./App.css";
 
 function App() {
+  const [boards, setBoards] = useState([]);
+  const [boardID, setBoardID] = useState();
 
-  const [boardData, setBoardData] = useState([]);
+  const onSelectBoard = (id) => {
+    setBoardID(id);
+  };
+
+  const refetchBoards = () => {
+    setBoards(getAllBoards());
+  };
+
+  useEffect(() => {
+    const fetch = async () => {
+      const b = await getAllBoards();
+      setBoards(b);
+    };
+    fetch();
+  }, []);
 
   return (
     <div className="App">
@@ -16,15 +30,15 @@ function App() {
         <h1>Inspiration Board</h1>
       </header>
       <main>
-        <div>
-          <BoardList 
-            boards={boardData}
+        <div id="sidebar">
+          <BoardList
+            boards={boards}
+            onSelectBoard={onSelectBoard}
+            refetchBoards={refetchBoards}
           />
         </div>
-        <div>
-          <Board
-            boards={boardData}
-          />
+        <div id="content">
+          <Board boardID={boardID} />
         </div>
       </main>
       <footer className="App-footer">
@@ -34,6 +48,6 @@ function App() {
       </footer>
     </div>
   );
-};
+}
 
 export default App;
