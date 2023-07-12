@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
-const Board = ({ id, title, owner }) => {
-
-};
+const Board = ({ id, title, owner }) => {};
 
 export default Board;

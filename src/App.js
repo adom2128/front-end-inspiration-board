@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
-import './App.css';
-import BoardList from './components/BoardComp/BoardListComp/BoardList';
-import CardList from './components/BoardComp/CardList';
-
+import React, { useEffect, useState } from "react";
+import Board from "./components/BoardComp/Board";
+import BoardList from "./components/BoardListComp/BoardList";
+import { getAllBoards } from "./api/BoardsRequests";
+import "./App.css";
 
 function App() {
-
   const [boards, setBoards] = useState([]);
-  const [boardData, setBoardData] = useState({});
-  const [cards, setCards] = useState([]);
+  const [boardID, setBoardID] = useState();
 
+  const onSelectBoard = (id) => {
+    setBoardID(id);
+  };
 
-//   const boardRequest = getOneBoard(boardID)
+  const refetchBoards = () => {
+    setBoards(getAllBoards());
+  };
 
-//   const onLikeUpdate = async () => {
-//   const cardsRequest = await getCards(boardData.id)
-//   setCards(cardsRequest)
-// }
+  useEffect(() => {
+    const fetch = async () => {
+      const b = await getAllBoards();
+      setBoards(b);
+    };
+    fetch();
+  }, []);
 
   return (
     <div className="App">
@@ -25,27 +31,19 @@ function App() {
       </header>
       <main>
         <div id="sidebar">
-          <BoardList 
-            displayBoards={displayBoards}
-            selectBoard={selectBoard}
-            createBoard={newBoard}
-            deleteBoard={deleteBoard}
+          <BoardList
+            boards={boards}
+            onSelectBoard={onSelectBoard}
+            refetchBoards={refetchBoards}
           />
         </div>
         <div id="content">
-          <Board
-            displayTitle={board.title}
-            board={displaycards}
-            createCard={newCard}
-            likeCard={onLike}
-            deleteCard={onDelete}
-            displayOwner={board.owner}
-          />
+          <Board boardID={boardID} />
         </div>
       </main>
       <footer> Copyright CADA 2023 </footer>
     </div>
   );
-};
+}
 
 export default App;
