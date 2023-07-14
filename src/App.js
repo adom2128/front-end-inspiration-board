@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Board from "./components/BoardComp/Board";
 import BoardList from "./components/BoardListComp/BoardList";
 import NewBoardForm from "./components/BoardListComp/NewBoardForm";
-import { getAllBoards } from "./api/BoardsRequests";
+import { getAllBoards, postBoard } from "./api/BoardsRequests";
 import "./App.css";
 
 function App() {
@@ -25,8 +25,10 @@ function App() {
     fetch();
   }, []);
 
-  const onBoardFormSubmit = () => {
-    console.log("onBoardFormSubmit called")
+  const onBoardFormSubmit = (newBoard) => {
+    postBoard(newBoard).then((response) => {
+      setBoards((prev) => [...prev, response]);
+    })
   };
 
   return (
@@ -40,7 +42,7 @@ function App() {
             boards={boards}
             onSelectBoard={onSelectBoard}
             refetchBoards={refetchBoards}
-            handleBoardFormSubmit={onBoardFormSubmit}
+            onBoardFormSubmit={onBoardFormSubmit}
           />
         </div>
         <div id="content">

@@ -21,8 +21,8 @@ const BoardList = ({ boards, onSelectBoard, refetchBoards, onBoardFormSubmit }) 
           ))}
         ;
       </ul>
-      <ul><NewBoardForm 
-            handleBoardFormSubmit={onBoardFormSubmit}/></ul>
+      <NewBoardForm 
+            onBoardFormSubmit={onBoardFormSubmit}/>
     </section>
   );
 };

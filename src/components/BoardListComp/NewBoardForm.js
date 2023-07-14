@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './NewBoardForm.css';
 
-const NewBoardForm = ({ onBoardFormSubmit}) => {
+const NewBoardForm = ({ onBoardFormSubmit }) => {
 
     const [newBoardTitle, setNewBoardTitle] = useState('');
     const [newBoardOwner, setNewBoardOwner] = useState('');
@@ -28,18 +28,18 @@ const NewBoardForm = ({ onBoardFormSubmit}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="new-board-form" onSubmit={handleSubmit}>
             <h2>Create New Board</h2>
             <div>            
-                <label htmlFor="newBoardTitle">Enter title:</label>
+                <label className="new-board-form-label" htmlFor="newBoardTitle">title</label>
                 <input type="text" id="newBoardTitle" name="newBoardTitle" onChange={handleBoardTitleChange} value={newBoardTitle} />
             </div>
             <div>
-                <label htmlFor="newBoardOwner">Enter owner:</label>
+                <label className="new-board-form-label" htmlFor="newBoardOwner">owner</label>
                 <input type="text" id="newBoardOwner" name="newBoardOwner" onChange={handleBoardOwnerChange} value={newBoardOwner} />
             </div>
             <div>
-                <input type="submit" value="add board" />
+                <input className="new-board-form-btn" type="submit" value="add board" />
             </div>
         </form>
     );
