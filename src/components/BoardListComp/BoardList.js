@@ -3,8 +3,6 @@ import './BoardList.css';
 
 const BoardList = ({ boards, onSelectBoard }) => {
 
-const BoardList = ({ boards, onSelectBoard }) => {
-
   const onSelect = (id) => {
     onSelectBoard(id);
   }; 
