@@ -1,13 +1,10 @@
 import React from "react";
 import './BoardList.css';
-// import { deleteOneBoard } from "../../api/BoardsRequests";
 
-const BoardList = ({ boards, onSelectBoard, refetchBoards }) => {
-  //   const onDelete = (id) => {
-  //     deleteOneBoard().then(() => {
-  //       refetchBoards();
-  //     });
-  //   };
+const BoardList = ({ boards, onSelectBoard }) => {
+
+const BoardList = ({ boards, onSelectBoard }) => {
+
   const onSelect = (id) => {
     onSelectBoard(id);
   }; 
@@ -23,8 +20,8 @@ const BoardList = ({ boards, onSelectBoard, refetchBoards }) => {
                 {board.title}
               </button>
             </li>
-          ))}
-        ;
+          ))
+        }
       </ul>
     </section>
   );

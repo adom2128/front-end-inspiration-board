@@ -12,8 +12,9 @@ function App() {
     setBoardID(id);
   };
 
-  const refetchBoards = () => {
-    setBoards(getAllBoards());
+  const refetchBoards = async() => {
+    const b = await getAllBoards()
+    setBoards(b);
   };
 
   useEffect(() => {
@@ -38,7 +39,9 @@ function App() {
           />
         </div>
         <div id="content">
-          <Board boardID={boardID} />
+          <Board 
+            boardID={boardID}
+            refetchBoards={refetchBoards} />
         </div>
       </main>
       <footer className="App__footer">
