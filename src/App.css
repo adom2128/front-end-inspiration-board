@@ -4,25 +4,39 @@
   min-height: 100vh;
 }
 
-.App-header {
+.App__header {
   background-color: var(--pink);
   min-height: 20vh;
   display: flex;
-  flex-direction:column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 30px;
+  /* color: white; */
+  position: relative;
 }
 
-.App-footer {
+.Inspo__board__text {
+  color: white;
+  position: fixed;
+  left: 37vh;
+  display: flex;
+  /* justify-content: flex-start;  */
+  /* Fix later so that Inspiration Board doesn't disappear behind the BoardList */
+
+}
+
+.App__footer {
   color: black;
   font-family: 'Varela Round';
   position: fixed;
-  left: 2vh;
-  bottom: 2vh; 
+  left: 37vh;
+  bottom: 1vh; 
   display: flex;
   justify-content: flex-start; 
   width: 100%; 
 }
 
+body {
+  margin: 0;
+}

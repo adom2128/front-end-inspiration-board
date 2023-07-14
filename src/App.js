@@ -26,8 +26,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Inspiration Board</h1>
+      <header className="App__header">
+        <h1 className="Inspo__board__text">Inspiration Board</h1>
       </header>
       <main>
         <div id="sidebar">
@@ -41,7 +41,7 @@ function App() {
           <Board boardID={boardID} />
         </div>
       </main>
-      <footer className="App-footer">
+      <footer className="App__footer">
         <div>
         &copy; 2023 Alejandra Dominguez, Angie Tran, Cindy Vides, Danica Sarmiento
         </div>
