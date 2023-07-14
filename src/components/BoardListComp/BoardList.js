@@ -2,14 +2,9 @@ import React from "react";
 import NewBoardForm from './NewBoardForm'
 import './BoardList.css';
 
-const BoardList = ({ boards, onSelectBoard }) => {
 
-const BoardList = ({ boards, onSelectBoard, refetchBoards, onBoardFormSubmit }) => {
-  //   const onDelete = (id) => {
-  //     deleteOneBoard().then(() => {
-  //       refetchBoards();
-  //     });
-  //   };
+const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
+
   const onSelect = (id) => {
     onSelectBoard(id);
   }; 
