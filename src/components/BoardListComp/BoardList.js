@@ -1,12 +1,7 @@
 import React from "react";
-// import { deleteOneBoard } from "../../api/BoardsRequests";
 
-const BoardList = ({ boards, onSelectBoard, refetchBoards }) => {
-  //   const onDelete = (id) => {
-  //     deleteOneBoard().then(() => {
-  //       refetchBoards();
-  //     });
-  //   };
+const BoardList = ({ boards, onSelectBoard }) => {
+
   const onSelect = (id) => {
     onSelectBoard(id);
   };
@@ -17,8 +12,8 @@ const BoardList = ({ boards, onSelectBoard, refetchBoards }) => {
         {boards &&
           boards.map((board) => (
             <li onClick={() => onSelect(board.board_id)}>{board.title}</li>
-          ))}
-        ;
+          ))
+        }
       </ul>
     </section>
   );

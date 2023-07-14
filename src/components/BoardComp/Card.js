@@ -1,28 +1,28 @@
 import React from "react";
-import { putLikeCard } from "../../api/CardsRequests";
+import { putLikeCard, deleteCard } from "../../api/CardsRequests";
 
-const Card = ({ id, message, likesCount, onLikeUpdate, onDeleteUpdate }) => {
-  const onLike = () => {
-    putLikeCard(id);
-    onLikeUpdate();
-  };
+const Card = ({ id, message, likesCount, refetchCards }) => {
 
-  const onDelete = () => {
-    onDeleteUpdate();
-  };
+    const onLike = () => {
+        putLikeCard(id).then(() => {refetchCards()})
+    };
 
-  return (
+    const onDelete = () => {
+        deleteCard(id).then(() => {refetchCards()})
+    };
+
+    return (
     <section className="card">
-      <button className="delete" onClick={onDelete}>
+        <button className="delete" onClick={onDelete}>
         X
-      </button>
-      <p className="text">{message}</p>
-      <p className="likesCount">{likesCount}</p>
-      <button className="like" onClick={onLike}>
+        </button>
+        <p className="text">{message}</p>
+        <p className="likesCount">{likesCount}</p>
+        <button className="like" onClick={onLike}>
         🤍
-      </button>
+        </button>
     </section>
-  );
+    );
 };
 
 // Card.propTypes = {
