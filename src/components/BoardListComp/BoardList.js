@@ -22,7 +22,7 @@ const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
         }
       </ul>
       <NewBoardForm 
-            onBoardFormSubmit={onBoardFormSubmit}/>
+        onBoardFormSubmit={onBoardFormSubmit}/>
     </section>
   );
 };
