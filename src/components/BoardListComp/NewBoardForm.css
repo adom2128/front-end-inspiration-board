@@ -1,0 +1,16 @@
+.new-board-form {
+    border-style: solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.new-board-form-label {
+    padding: 10px;
+    margin: 10px;
+}
+
+.new-board-form-btn {
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
