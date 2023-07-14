@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Board from "./components/BoardComp/Board";
 import BoardList from "./components/BoardListComp/BoardList";
+import NewBoardForm from "./components/BoardListComp/NewBoardForm";
 import { getAllBoards } from "./api/BoardsRequests";
 import "./App.css";
 
@@ -24,6 +25,10 @@ function App() {
     fetch();
   }, []);
 
+  const onBoardFormSubmit = () => {
+    console.log("onBoardFormSubmit called")
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,6 +40,7 @@ function App() {
             boards={boards}
             onSelectBoard={onSelectBoard}
             refetchBoards={refetchBoards}
+            handleBoardFormSubmit={onBoardFormSubmit}
           />
         </div>
         <div id="content">

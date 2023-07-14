@@ -1,7 +1,8 @@
 import React from "react";
+import NewBoardForm from './NewBoardForm'
 // import { deleteOneBoard } from "../../api/BoardsRequests";
 
-const BoardList = ({ boards, onSelectBoard, refetchBoards }) => {
+const BoardList = ({ boards, onSelectBoard, refetchBoards, onBoardFormSubmit }) => {
   //   const onDelete = (id) => {
   //     deleteOneBoard().then(() => {
   //       refetchBoards();
@@ -20,6 +21,8 @@ const BoardList = ({ boards, onSelectBoard, refetchBoards }) => {
           ))}
         ;
       </ul>
+      <ul><NewBoardForm 
+            handleBoardFormSubmit={onBoardFormSubmit}/></ul>
     </section>
   );
 };
