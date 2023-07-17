@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export const postBoard = (newBoard) => {
   return axios
     .post("https://cada-inspo-board.onrender.com/boards", newBoard)
