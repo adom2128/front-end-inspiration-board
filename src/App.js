@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Board from "./components/BoardComp/Board";
 import BoardList from "./components/BoardListComp/BoardList";
-import NewBoardForm from "./components/BoardListComp/NewBoardForm";
+// import NewBoardForm from "./components/BoardListComp/NewBoardForm";
 import { getAllBoards, postBoard } from "./api/BoardsRequests";
 import "./App.css";
 

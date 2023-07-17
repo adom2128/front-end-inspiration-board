@@ -1,18 +1,11 @@
 import axios from "axios";
 
-export const postBoard = async (title, owner) => {
+
+export const postBoard = (newBoard) => {
   return axios
-    .post("https://cada-inspo-board.onrender.com/boards", {
-      title: title,
-      owner: owner,
-    })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-      return error;
-    });
+    .post("https://cada-inspo-board.onrender.com/boards", newBoard)
+    .then((response) => response.data)
+    .catch((error) => console.log(error));
 };
 
 export const getAllBoards = async () => {

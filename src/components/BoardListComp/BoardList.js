@@ -2,16 +2,11 @@ import React from "react";
 import NewBoardForm from './NewBoardForm'
 import './BoardList.css';
 
-const BoardList = ({ boards, onSelectBoard, refetchBoards, onBoardFormSubmit }) => {
-  //   const onDelete = (id) => {
-  //     deleteOneBoard().then(() => {
-  //       refetchBoards();
-  //     });
-  //   };
+const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
+
   const onSelect = (id) => {
     onSelectBoard(id);
   }; 
-
 
   return (
     <section className="board__list">
@@ -27,11 +22,9 @@ const BoardList = ({ boards, onSelectBoard, refetchBoards, onBoardFormSubmit }) 
         }
       </ul>
       <NewBoardForm 
-            onBoardFormSubmit={onBoardFormSubmit}/>
+        onBoardFormSubmit={onBoardFormSubmit}/>
     </section>
   );
 };
 
 export default BoardList;
-
-// add proptypes
