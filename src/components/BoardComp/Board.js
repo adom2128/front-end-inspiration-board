@@ -18,7 +18,10 @@ const Board = ({ boardID, refetchBoards}) => {
   };
 
   const onDelete = () => {
-    deleteOneBoard(boardID).then(() => {refetchBoards()});
+    deleteOneBoard(boardID).then(() => {
+      refetchBoards()
+      setBoard({})
+    });
   };
 
   useEffect(() => {
@@ -36,7 +39,7 @@ const Board = ({ boardID, refetchBoards}) => {
   return (
     //display board name
     <section>
-      <button className="delete" onClick={onDelete}>X</button>
+      {Object.keys(board).length > 0 && <button className="delete" onClick={onDelete}>X</button>}
       <h2>{board?.title}</h2>
       <ul>
         {cards &&
