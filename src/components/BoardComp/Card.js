@@ -25,13 +25,4 @@ const Card = ({ id, message, likesCount, refetchCards }) => {
     );
 };
 
-// Card.propTypes = {
-//     //Fill with correct proptypes
-//     id: PropTypes.number.isRequired,
-//     message: PropTypes.string.isRequired,
-//     likesCount: PropTypes.string.isRequired,
-//     onLikeUpdate: PropTypes.func,
-//     onDeleteUpdate: PropTypes.func
-//   };
-
 export default Card;

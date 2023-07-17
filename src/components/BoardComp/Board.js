@@ -1,11 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import { getOneBoard } from "../../api/BoardsRequests";
 import { getCards } from "../../api/CardsRequests";
-// import CardList from "./CardList";
 import Card from "./Card";
 import { deleteOneBoard, getOneBoard } from "../../api/BoardsRequests";
-
 
 const Board = ({ boardID, refetchBoards}) => {
 
@@ -37,7 +34,6 @@ const Board = ({ boardID, refetchBoards}) => {
   }, [boardID]);
 
   return (
-    //display board name
     <section>
       {Object.keys(board).length > 0 && <button className="delete" onClick={onDelete}>X</button>}
       <h2>{board?.title}</h2>
@@ -52,8 +48,6 @@ const Board = ({ boardID, refetchBoards}) => {
             />
           ))}
       </ul>
-      {/* <CardList cards={boardID.cards}/> */}
-      {/* //display board owner */}
       <h2>{board?.owner}</h2>
     </section>
   );
