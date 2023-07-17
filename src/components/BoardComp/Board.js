@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getCards } from "../../api/CardsRequests";
 import Card from "./Card";
 import { deleteOneBoard, getOneBoard } from "../../api/BoardsRequests";
+import "./Board.css"
 
 const Board = ({ boardID, refetchBoards}) => {
 
@@ -34,7 +35,7 @@ const Board = ({ boardID, refetchBoards}) => {
   }, [boardID]);
 
   return (
-    <section>
+    <section className="board">
       {Object.keys(board).length > 0 && <button className="delete" onClick={onDelete}>X</button>}
       <h2>{board?.title}</h2>
       <ul>
