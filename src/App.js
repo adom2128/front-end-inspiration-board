@@ -49,7 +49,7 @@ function App() {
         <div id="content">
           <Board 
             boardID={boardID}
-            refetchBoards={refetchBoards} />
+            refetchBoards={refetchBoards}/>
         </div>
       </main>
       <footer className="App__footer">

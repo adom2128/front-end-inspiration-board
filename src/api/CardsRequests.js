@@ -1,17 +1,10 @@
 import axios from "axios";
 
-export const postCard = async (message) => {
+export const postCard = (newCard, id) => {
   return axios
-    .post("https://cada-inspo-board.onrender.com/boards/<board_id>/cards", {
-      message: message,
-    })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-      return error;
-    });
+    .post(`https://cada-inspo-board.onrender.com/boards/${id}/cards`, newCard)
+    .then((response) => response.data)
+    .catch((error) => console.log(error));
 };
 
 export const getCards = async (id) => {

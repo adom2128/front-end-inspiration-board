@@ -1,14 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getCards } from "../../api/CardsRequests";
+import { getCards, postCard } from "../../api/CardsRequests";
 import Card from "./Card";
 import { deleteOneBoard, getOneBoard } from "../../api/BoardsRequests";
 import "./Board.css"
+import NewCardForm from "./NewCardForm";
 
 const Board = ({ boardID, refetchBoards}) => {
 
   const [cards, setCards] = useState([]);
   const [board, setBoard] = useState({});
+  const [showForm, setShowForm] = useState(false);
+
 
   const refetchCards = async () => {
     const g = await getCards(boardID)
@@ -32,8 +35,15 @@ const Board = ({ boardID, refetchBoards}) => {
         setBoard(b);
       };
       fetch();
+      setShowForm(true);
     }
   }, [boardID]);
+
+  const onCardFormSubmit = (newCard) => {
+    postCard(newCard, boardID).then((response) => {
+      setCards((prev) => [...prev, response]);
+    })
+  };
 
   return (
     <section className="board">
@@ -49,6 +59,11 @@ const Board = ({ boardID, refetchBoards}) => {
               refetchCards={refetchCards}
             />
           ))}
+      </ul>
+      <ul>
+        {showForm && <NewCardForm 
+          onCardFormSubmit={onCardFormSubmit}
+        />}
       </ul>
       <h2>{board?.owner}</h2>
     </section>
