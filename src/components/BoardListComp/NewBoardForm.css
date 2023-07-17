@@ -1,16 +1,27 @@
 .new-board-form {
     border-style: solid;
-    margin: 5px;
-    padding: 5px;
+    border-width: thin;
+    border-color: var(--dark-gray);
+    padding: 10px;
+    width: 250px;
+    background-color: var(--white);
+    color: var(--dark-teal);
 }
 
 .new-board-form-label {
     padding: 10px;
     margin: 10px;
+    font-family: 'Varela Round';
 }
 
 .new-board-form-btn {
     padding: 5px;
-    margin: 5px;
+    margin: 30px;
     cursor: pointer;
+    font-family: 'Varela Round';
+    border: none;
+    background-color: var(--teal);
+    color: white;
+    width: 10vh;
+    font-size: 14px;
 }
