@@ -18,6 +18,7 @@ const Board = ({ boardID, refetchBoards}) => {
   const onDelete = () => {
     deleteOneBoard(boardID).then(() => {
       refetchBoards()
+      setCards([])
       setBoard({})
     });
   };
