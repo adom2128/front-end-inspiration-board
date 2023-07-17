@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NewBoardForm from './NewBoardForm'
 import './BoardList.css';
 
@@ -7,6 +7,7 @@ const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
   const onSelect = (id) => {
     onSelectBoard(id);
   }; 
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <section className="board__list">
@@ -21,8 +22,10 @@ const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
           ))
         }
       </ul>
-      <NewBoardForm 
-        onBoardFormSubmit={onBoardFormSubmit}/>
+      {showForm && <NewBoardForm onBoardFormSubmit={onBoardFormSubmit} />}
+      <button onClick={() => setShowForm(!showForm)}>
+        {showForm ? 'Hide Form' : 'Create New Board'}
+      </button>
     </section>
   );
 };
