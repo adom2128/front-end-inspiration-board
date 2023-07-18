@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import NewBoardForm from './NewBoardForm'
-import './BoardList.css';
+import NewBoardForm from "./NewBoardForm";
+import "./BoardList.css";
 
 const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
+  const [showForm, setShowForm] = useState(false);
 
   const onSelect = (id) => {
     onSelectBoard(id);
-  }; 
-  const [showForm, setShowForm] = useState(false);
+  };
 
   return (
     <section className="board__list">
@@ -19,16 +19,17 @@ const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
                 {board.title}
               </button>
             </li>
-          ))
-        }
+          ))}
       </ul>
-      
+
       {showForm && <NewBoardForm onBoardFormSubmit={onBoardFormSubmit} />}
       <button
-        className={`board__list-form-button ${showForm ? 'hide-form' : 'create-board'}`}
+        className={`board__list-form-button ${
+          showForm ? "hide-form" : "create-board"
+        }`}
         onClick={() => setShowForm(!showForm)}
       >
-        {showForm ? 'Hide Form' : 'Create New Board'}
+        {showForm ? "Hide Form" : "Create New Board"}
       </button>
     </section>
   );

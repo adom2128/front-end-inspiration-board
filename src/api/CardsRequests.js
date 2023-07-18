@@ -1,15 +1,11 @@
 import axios from "axios";
 
-// export const postCard = (newCard, id) => {
-//   return axios
-//     .post(`https://cada-inspo-board.onrender.com/boards/${id}/cards`, newCard)
-//     .then((response) => response.data)
-//     .catch((error) => console.log(error));
-// };
-
 export const postCard = async (newCard, id) => {
   try {
-    const response = await axios.post(`https://cada-inspo-board.onrender.com/boards/${id}/cards`, newCard);
+    const response = await axios.post(
+      `https://cada-inspo-board.onrender.com/boards/${id}/cards`,
+      newCard,
+    );
     return response.data;
   } catch (error) {
     console.log(error);
@@ -32,15 +28,15 @@ export const putLikeCard = async (id) => {
   return axios
     .put(`https://cada-inspo-board.onrender.com/cards/${id}/like`)
     .then((response) => {
-    return response.data;
+      return response.data;
     })
     .catch((error) => {
-    console.log(error);
-    return error;
+      console.log(error);
+      return error;
     });
 };
 
-export const deleteCard = async(id) => {
+export const deleteCard = async (id) => {
   return axios
     .delete(`https://cada-inspo-board.onrender.com/cards/${id}`)
     .then((response) => {

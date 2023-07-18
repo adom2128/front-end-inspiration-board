@@ -9,7 +9,7 @@
   width: 20vh;
   height: 20vh;
   margin-left: 35vh;
-  font-family: 'Varela Round';
+  font-family: "Varela Round";
   position: relative;
 }
 
@@ -31,20 +31,18 @@
 }
 
 .likesCount {
-  position: absolute; 
+  position: absolute;
   bottom: 0;
-  left: 25px; 
+  left: 25px;
   border-style: none;
   background-color: var(--pink);
   font-size: 18px;
 }
 
-
-
 .like {
-  position: absolute; 
-  bottom: 17px; 
-  left: 40px; 
+  position: absolute;
+  bottom: 17px;
+  left: 40px;
   border-style: none;
   background-color: var(--pink);
   font-size: 18px;
