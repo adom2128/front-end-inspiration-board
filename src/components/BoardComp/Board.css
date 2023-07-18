@@ -1,9 +1,10 @@
 .board {
-  /* background-color: red; */
+  background-color: red;
   margin-left: 36vh;
-  
+  /* margin-right: 10vh; */
 }
 
 .ul-cards {
   display: flex;
+  flex-wrap: wrap;
 }
