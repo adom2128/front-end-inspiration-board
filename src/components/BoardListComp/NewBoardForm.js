@@ -50,7 +50,7 @@ const NewBoardForm = ({ onBoardFormSubmit }) => {
                 value={newBoardOwner}
                 placeholder="Owner" />
             </div>
-            {(newBoardTitle==='' || newBoardOwner==='') && <div className="warning"> Please fill in both fields. </div>}
+            {(newBoardTitle==='' || newBoardOwner==='') && <div className="warning"> Please fill out all fields. </div>}
             <div>
                 <input className="new-board-form-btn" type="submit" value="add board" disabled={newBoardTitle==='' || newBoardOwner===''}/>
             </div>

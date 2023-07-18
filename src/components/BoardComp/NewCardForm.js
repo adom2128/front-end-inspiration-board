@@ -34,7 +34,7 @@ const NewCardForm = ({ onCardFormSubmit }) => {
                     value={newCardMessage} 
                     placeholder="Enter new message..."/>
             </div>
-            {newCardMessage==='' && <div className="warning"> Please fill out the field.</div>}
+            {newCardMessage==='' && <div className="warning"> Please fill out all fields.</div>}
             <div>
                 <input className="new-card-form-btn" type="submit" value="add card" disabled={newCardMessage===''}/>
             </div>
