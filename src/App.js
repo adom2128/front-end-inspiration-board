@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Board from "./components/BoardComp/Board";
 import BoardList from "./components/BoardListComp/BoardList";
-// import NewBoardForm from "./components/BoardListComp/NewBoardForm";
 import { getAllBoards, postBoard } from "./api/BoardsRequests";
 import "./App.css";
 
@@ -13,23 +12,23 @@ function App() {
     setBoardID(id);
   };
 
-  const refetchBoards = async() => {
-    const b = await getAllBoards()
+  const refetchBoards = async () => {
+    const b = await getAllBoards();
     setBoards(b);
   };
 
   useEffect(() => {
-    const fetch = async () => {
-      const b = await getAllBoards();
-      setBoards(b);
+    const fetchBoardList = async () => {
+      const boards = await getAllBoards();
+      setBoards(boards);
     };
-    fetch();
+    fetchBoardList();
   }, []);
 
   const onBoardFormSubmit = (newBoard) => {
     postBoard(newBoard).then((response) => {
       setBoards((prev) => [...prev, response]);
-    })
+    });
   };
 
   return (
@@ -47,14 +46,13 @@ function App() {
           />
         </div>
         <div id="content">
-          <Board 
-            boardID={boardID}
-            refetchBoards={refetchBoards}/>
+          <Board boardID={boardID} refetchBoards={refetchBoards} />
         </div>
       </main>
       <footer className="App__footer">
         <div>
-        &copy; 2023 Alejandra Dominguez, Angie Tran, Cindy Vides, Danica Sarmiento
+          &copy; 2023 Alejandra Dominguez, Angie Tran, Cindy Vides, Danica
+          Sarmiento
         </div>
       </footer>
     </div>

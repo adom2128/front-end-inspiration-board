@@ -31,15 +31,13 @@
 }
 
 .likesCount {
-  position: absolute; 
+  position: absolute;
   bottom: 0;
-  left: 25px; 
+  left: 25px;
   border-style: none;
   background-color: var(--pink);
   font-size: 18px;
 }
-
-
 
 .like {
   position: absolute; 

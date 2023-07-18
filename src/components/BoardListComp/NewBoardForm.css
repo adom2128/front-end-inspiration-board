@@ -1,13 +1,13 @@
 .new-board-form {
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    width: 100%;
-    max-width: 250px;
-    background-color: var(--white);
-    color: var(--dark-teal);
-    font-size: 14px;
-    margin-top: -40px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  width: 100%;
+  max-width: 250px;
+  background-color: var(--white);
+  color: var(--dark-teal);
+  font-size: 14px;
+  margin-top: -40px;
 }
 
 .new-board-form-input {
@@ -18,7 +18,7 @@
 }
 
 .warning {
-    color: rgb(227, 54, 54)
+  color: rgb(227, 54, 54);
 }
 
 .new-board-form-btn {
@@ -34,5 +34,5 @@
 }
 
 *:disabled {
-    background-color: rgb(166, 166, 166);
+  background-color: rgb(166, 166, 166);
 }

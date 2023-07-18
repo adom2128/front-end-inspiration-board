@@ -23,18 +23,17 @@
   display: flex;
   /* justify-content: flex-start;  */
   /* Fix later so that Inspiration Board doesn't disappear behind the BoardList */
-
 }
 
 .App__footer {
   color: black;
-  font-family: 'Varela Round';
+  font-family: "Varela Round";
   position: fixed;
   left: 45vh;
-  bottom: 1vh; 
+  bottom: 1vh;
   display: flex;
-  justify-content: flex-start; 
-  width: 100%; 
+  justify-content: flex-start;
+  width: 100%;
 }
 
 body {
