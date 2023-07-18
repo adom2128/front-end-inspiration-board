@@ -52,7 +52,7 @@ const Board = ({ boardID, refetchBoards }) => {
         </button>
       )}
       <h2>{board?.title}</h2>
-      <ul>
+      <ul className="ul-cards">
         {cards &&
           cards.map((card) => (
             <Card
