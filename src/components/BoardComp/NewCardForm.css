@@ -1,0 +1,44 @@
+.new-card-form {
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    width: 300px;
+    height: 250px;
+    background-color: var(--white);
+    color: var(--dark-teal);
+    font-size: 14px;
+    margin-top: -40px;
+
+    /* remove after board position has been fixed */
+    /* top: 37vh;
+    left: 42vh;
+    position:absolute; */
+}
+
+.new-card-form-input {
+    padding: 10px;
+    margin: 10px;
+    width: 225px;
+    font-family: 'Varela Round';
+    /* color: red; */
+}
+
+.new-card-form-btn {
+    padding: 7.5px;
+    margin: 30px;
+    cursor: pointer;
+    font-family: 'Varela Round';
+    border: none;
+    background-color: var(--teal);
+    color: white;
+    width: 15vh;
+    font-size: 14px;
+}
+
+.warning {
+    color: rgb(227, 54, 54)
+}
+
+*:disabled {
+    background-color: rgb(166, 166, 166);
+}

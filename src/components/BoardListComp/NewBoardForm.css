@@ -12,7 +12,7 @@
 
 .new-board-form-input {
     padding: 10px;
-    margin: 10px;
+    margin: 7.5px;
     font-family: 'Varela Round';
     /* color: red; */
 }
@@ -22,14 +22,14 @@
 }
 
 .new-board-form-btn {
-    padding: 5px;
+    padding: 7.5px;
     margin: 30px;
     cursor: pointer;
     font-family: 'Varela Round';
     border: none;
     background-color: var(--teal);
     color: white;
-    width: 10vh;
+    width: 15vh;
     font-size: 14px;
 }
 

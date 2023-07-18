@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../BoardListComp/NewBoardForm.css';
+import './NewCardForm.css';
 
 const NewCardForm = ({ onCardFormSubmit }) => {
 
@@ -25,8 +25,14 @@ const NewCardForm = ({ onCardFormSubmit }) => {
         <form className="new-card-form" onSubmit={handleSubmit}>
             <h2>Add New Card</h2>
             <div>            
-                <label className="new-card-form-label" htmlFor="newCardMessage">message</label>
-                <input type="text" id="newCardMessage" name="newCardMessage" onChange={handleNewCardMessage} value={newCardMessage} />
+                <input 
+                    className="new-card-form-input" 
+                    type="text" 
+                    id="newCardMessage" 
+                    name="newCardMessage" 
+                    onChange={handleNewCardMessage} 
+                    value={newCardMessage} 
+                    placeholder="Enter new message..."/>
             </div>
             {newCardMessage==='' && <div className="warning"> Please fill out the field.</div>}
             <div>

@@ -53,7 +53,7 @@ const NewBoardForm = ({ onBoardFormSubmit }) => {
             </div>
             {(newBoardTitle==='' || newBoardOwner==='') && <div className="warning"> Please fill in both fields. </div>}
             <div>
-                <input className="new-board-form-btn" type="submit" value="Add Board" disabled={newBoardTitle==='' || newBoardOwner===''}/>
+                <input className="new-board-form-btn" type="submit" value="add board" disabled={newBoardTitle==='' || newBoardOwner===''}/>
             </div>
         </form>
     );
