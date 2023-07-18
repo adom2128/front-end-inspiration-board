@@ -11,10 +11,10 @@
 }
 
 .new-board-form-input {
-  padding: 10px;
-  margin: 10px;
-  font-family: "Varela Round";
-  /* color: red; */
+    padding: 10px;
+    margin: 7.5px;
+    font-family: 'Varela Round';
+    /* color: red; */
 }
 
 .warning {
@@ -22,15 +22,15 @@
 }
 
 .new-board-form-btn {
-  padding: 5px;
-  margin: 30px;
-  cursor: pointer;
-  font-family: "Varela Round";
-  border: none;
-  background-color: var(--teal);
-  color: white;
-  width: 10vh;
-  font-size: 14px;
+    padding: 7.5px;
+    margin: 30px;
+    cursor: pointer;
+    font-family: 'Varela Round';
+    border: none;
+    background-color: var(--teal);
+    color: white;
+    width: 15vh;
+    font-size: 14px;
 }
 
 *:disabled {

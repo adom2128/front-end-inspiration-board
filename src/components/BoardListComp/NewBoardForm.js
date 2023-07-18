@@ -26,44 +26,37 @@ const NewBoardForm = ({ onBoardFormSubmit }) => {
     setNewBoardTitle("");
   };
 
-  return (
-    <form className="new-board-form" onSubmit={handleSubmit}>
-      <h2>Create New Board</h2>
-      <div>
-        <input
-          className="new-board-form-input"
-          type="text"
-          id="newBoardTitle"
-          name="newBoardTitle"
-          onChange={handleBoardTitleChange}
-          value={newBoardTitle}
-          placeholder="Title"
-        />
-      </div>
-      <div>
-        <input
-          className="new-board-form-input"
-          type="text"
-          id="newBoardOwner"
-          name="newBoardOwner"
-          onChange={handleBoardOwnerChange}
-          value={newBoardOwner}
-          placeholder="Owner"
-        />
-      </div>
-      {(newBoardTitle === "" || newBoardOwner === "") && (
-        <div className="warning"> Please fill in both fields. </div>
-      )}
-      <div>
-        <input
-          className="new-board-form-btn"
-          type="submit"
-          value="Add Board"
-          disabled={newBoardTitle === "" || newBoardOwner === ""}
-        />
-      </div>
-    </form>
-  );
+    return (
+        <form className="new-board-form" onSubmit={handleSubmit}>
+            <h2>Create New Board</h2>
+            <div>      
+                <input
+                className="new-board-form-input"
+                type="text" 
+                id="newBoardTitle" 
+                name="newBoardTitle" 
+                onChange={handleBoardTitleChange} 
+                value={newBoardTitle}
+                placeholder="Title" />
+                
+            </div>
+            <div>
+                <input 
+                className="new-board-form-input"
+                type="text" 
+                id="newBoardOwner" 
+                name="newBoardOwner" 
+                onChange={handleBoardOwnerChange} 
+                value={newBoardOwner}
+                placeholder="Owner" />
+            </div>
+            {(newBoardTitle==='' || newBoardOwner==='') && <div className="warning"> Please fill in both fields. </div>}
+            <div>
+                <input className="new-board-form-btn" type="submit" value="add board" disabled={newBoardTitle==='' || newBoardOwner===''}/>
+            </div>
+        </form>
+    );
+    
 };
 
 export default NewBoardForm;
