@@ -13,14 +13,14 @@ function App() {
   };
 
   const refetchBoards = async () => {
-    const b = await getAllBoards();
-    setBoards(b);
+    const retrieveBoards = await getAllBoards();
+    setBoards(retrieveBoards);
   };
 
   useEffect(() => {
     const fetchBoardList = async () => {
-      const boards = await getAllBoards();
-      setBoards(boards);
+      const retrieveBoards = await getAllBoards();
+      setBoards(retrieveBoards);
     };
     fetchBoardList();
   }, []);
