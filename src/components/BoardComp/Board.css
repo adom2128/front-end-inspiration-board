@@ -1,5 +1,9 @@
-.board-text {
+.board-text-title {
     margin-left: 40vh;
+}
+
+.board-text-owner {
+    margin-left: 150vh;
 }
 
 .board-container {
@@ -11,6 +15,13 @@
   flex-wrap: wrap;
 }
 
-/* .delete {
-  margin-top: 
-} */
+.delete-board {
+  position: absolute;
+  top: 18%;
+  right: 3.1%;
+  margin: 10px;
+  border-style: none;
+  background-color: var(--pink);
+  font-size: 18px;
+  box-shadow: -2.5px 2.5px 2.5px #d3d3d3;
+}

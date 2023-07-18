@@ -48,12 +48,12 @@ const Board = ({ boardID, refetchBoards }) => {
     <section className="board">
       <div>
               {Object.keys(board).length > 0 && (
-        <button className="delete" onClick={onDelete}>
+        <button className="delete-board" onClick={onDelete}>
           X
         </button>)}
       </div>
 
-      <h2 className="board-text">{board?.title}</h2>
+      <h2 className="board-text-title">{board?.title}</h2>
       <div className="board-container">
         <ul className="ul-cards">
           {cards &&
@@ -69,7 +69,7 @@ const Board = ({ boardID, refetchBoards }) => {
         </ul>
         
       </div>
-      <h2 className="board-text">{board?.owner}</h2>
+      <h2 className="board-text-owner">{board?.owner}</h2>
     </section>
   );
 };
