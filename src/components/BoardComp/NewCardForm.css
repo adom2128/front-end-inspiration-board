@@ -2,7 +2,7 @@
     border-style: solid;
     border-width: thin;
     border-color: black;
-    width: 46%;
+    width: 22%;
     height: 250px;
     background-color: var(--white);
     color: var(--dark-teal);
@@ -14,7 +14,7 @@
 .new-card-form-input {
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: 250px;
     font-family: 'Varela Round';
     /* color: red; */
 }

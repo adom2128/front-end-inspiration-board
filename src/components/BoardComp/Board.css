@@ -1,9 +1,11 @@
 .board-text-title {
     margin-left: 40vh;
+    font-size: xx-large;
 }
 
 .board-text-owner {
     margin-left: 150vh;
+    font-size: x-large;
 }
 
 .board-container {
