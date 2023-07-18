@@ -22,8 +22,12 @@ const BoardList = ({ boards, onSelectBoard, onBoardFormSubmit }) => {
           ))
         }
       </ul>
+      
       {showForm && <NewBoardForm onBoardFormSubmit={onBoardFormSubmit} />}
-      <button onClick={() => setShowForm(!showForm)}>
+      <button
+        className={`board__list-form-button ${showForm ? 'hide-form' : 'create-board'}`}
+        onClick={() => setShowForm(!showForm)}
+      >
         {showForm ? 'Hide Form' : 'Create New Board'}
       </button>
     </section>

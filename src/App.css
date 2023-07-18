@@ -6,7 +6,7 @@
 
 .App__header {
   background-color: var(--pink);
-  min-height: 20vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,7 +18,7 @@
 
 .Inspo__board__text {
   color: white;
-  position: fixed;
+  position: absolute;
   left: 37vh;
   display: flex;
   /* justify-content: flex-start;  */

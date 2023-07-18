@@ -1,13 +1,14 @@
 .board__list {
   display: flex;
-  position: fixed;
+  position: absolute;
   flex-direction:column;
   align-items: center;
   top: 0;
-  left: 0;
-  bottom: 0;
+  /* left: 0; */
+  /* bottom: 0; */
   width: 35vh; 
-  background-color: var(--gray); 
+  background-color: var(--gray);
+  min-height: 100%;
 }
 
 .board__list ul {
@@ -29,4 +30,18 @@
   color: var(--dark-teal);
   padding: 20px;
   border-style: none;
+}
+
+.board__list-form-button.hide-form {
+  background-color: var(--gray);
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.board__list-form-button.create-board {
+  background-color: var(--white);
+  border-style: solid;
+  border-width: thin;
+  margin-top: -40px;
+  font-size: 21px;
 }

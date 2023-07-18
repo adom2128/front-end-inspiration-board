@@ -1,23 +1,36 @@
 .new-board-form {
     border-style: solid;
     border-width: thin;
-    border-color: var(--dark-gray);
-    padding: 10px;
-    width: 250px;
+    border-color: black;
+    width: 100%;
+    max-width: 250px;
     background-color: var(--white);
     color: var(--dark-teal);
+    font-size: 14px;
+    margin-top: -40px;
 }
 
-.new-board-form-label {
+.new-board-form-input {
     padding: 10px;
     margin: 10px;
     font-family: 'Varela Round';
-    /* color: red; */
+    color: var(--white);
+    background-color: var(--teal);
+    border-style: none;
+    width: 200px;
+    height: 25px;
+    
+}
+
+::placeholder {
+    color: var(--white);
+    font-size: 14px;
+    font-family: 'Varela Round';
 }
 
 .new-board-form-btn {
     padding: 5px;
-    margin: 30px;
+    margin: 20px;
     cursor: pointer;
     font-family: 'Varela Round';
     border: none;
