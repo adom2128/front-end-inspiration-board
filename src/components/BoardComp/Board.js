@@ -23,6 +23,7 @@ const Board = ({ boardID, refetchBoards}) => {
       refetchBoards()
       setCards([])
       setBoard({})
+      setShowForm(false)
     });
   };
 
