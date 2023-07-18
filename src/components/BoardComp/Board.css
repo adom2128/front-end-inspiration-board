@@ -1,0 +1,9 @@
+.board {
+  /* background-color: red; */
+  margin-left: 36vh;
+  
+}
+
+.ul-cards {
+  display: flex;
+}
