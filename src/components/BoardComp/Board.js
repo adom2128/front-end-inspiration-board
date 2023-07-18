@@ -46,25 +46,30 @@ const Board = ({ boardID, refetchBoards }) => {
 
   return (
     <section className="board">
-      {Object.keys(board).length > 0 && (
+      <div>
+              {Object.keys(board).length > 0 && (
         <button className="delete" onClick={onDelete}>
           X
-        </button>
-      )}
-      <h2>{board?.title}</h2>
-      <ul className="ul-cards">
-        {cards &&
-          cards.map((card) => (
-            <Card
-              id={card.card_id}
-              message={card.message}
-              likesCount={card.likes_count}
-              refetchCards={refetchCards}
-            />
-          ))}
-      </ul>
-      <ul>{showForm && <NewCardForm onCardFormSubmit={onCardFormSubmit} />}</ul>
-      <h2>{board?.owner}</h2>
+        </button>)}
+      </div>
+
+      <h2 className="board-text">{board?.title}</h2>
+      <div className="board-container">
+        <ul className="ul-cards">
+          {cards &&
+            cards.map((card) => (
+              <Card
+                id={card.card_id}
+                message={card.message}
+                likesCount={card.likes_count}
+                refetchCards={refetchCards}
+              />
+            ))}
+            {showForm && <NewCardForm onCardFormSubmit={onCardFormSubmit} />}
+        </ul>
+        
+      </div>
+      <h2 className="board-text">{board?.owner}</h2>
     </section>
   );
 };

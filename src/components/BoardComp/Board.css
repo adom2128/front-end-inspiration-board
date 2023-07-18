@@ -1,5 +1,8 @@
-.board {
-  /* background-color: red; */
+.board-text {
+    margin-left: 40vh;
+}
+
+.board-container {
   margin-left: 40vh;
 }
 
