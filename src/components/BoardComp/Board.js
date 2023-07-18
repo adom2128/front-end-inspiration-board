@@ -12,8 +12,8 @@ const Board = ({ boardID, refetchBoards }) => {
   const [showForm, setShowForm] = useState(false);
 
   const refetchCards = async () => {
-    const g = await getCards(boardID);
-    setCards(g);
+    const retrievecards = await getCards(boardID);
+    setCards(retrievecards);
   };
 
   const onDelete = () => {
@@ -29,9 +29,9 @@ const Board = ({ boardID, refetchBoards }) => {
     if (boardID) {
       const fetchBoard = async () => {
         const selectedBoard = await getOneBoard(boardID);
-        const cards = await getCards(boardID);
+        const retrievecards = await getCards(boardID);
         setBoard(selectedBoard);
-        setCards(cards);
+        setCards(retrievecards);
       };
       fetchBoard();
       setShowForm(true);
