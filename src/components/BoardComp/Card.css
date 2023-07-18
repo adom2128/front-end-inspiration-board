@@ -26,6 +26,7 @@
   border-style: none;
   background-color: var(--pink);
   font-size: 18px;
+  cursor: pointer;
 }
 
 .likesCount {
@@ -44,4 +45,5 @@
   border-style: none;
   background-color: var(--pink);
   font-size: 18px;
+  cursor: pointer;
 }
