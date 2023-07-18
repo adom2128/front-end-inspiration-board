@@ -20,6 +20,7 @@
 .board__list li {
   list-style: none;
   padding: 20px;
+  
 }
 
 .board__list button {
@@ -30,6 +31,7 @@
   color: var(--dark-teal);
   padding: 20px;
   border-style: none;
+  box-shadow: -10px 7px 7px #d3d3d3;
 }
 
 .board__list-form-button.hide-form {

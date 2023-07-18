@@ -1,10 +1,13 @@
 .board {
-  background-color: red;
-  margin-left: 36vh;
-  /* margin-right: 10vh; */
+  /* background-color: red; */
+  margin-left: 40vh;
 }
 
 .ul-cards {
   display: flex;
   flex-wrap: wrap;
 }
+
+/* .delete {
+  margin-top: 
+} */
