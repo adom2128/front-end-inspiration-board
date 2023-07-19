@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: white;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .App__header {
@@ -28,13 +28,13 @@
 .App__footer {
   color: black;
   font-family: "Varela Round";
-  position: fixed;
-  left: 45vh;
-  bottom: 0vh;
+  position: relative;
+  left: 20rem; /* Use a small left margin using rem unit */
+  bottom: 1rem;
   display: flex;
   justify-content: flex-start;
   width: 100%;
-  background: white;
+  /* background: white; */
 }
 
 body {
