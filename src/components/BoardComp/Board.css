@@ -1,17 +1,18 @@
 .board-text-title {
-    margin-left: 40vh;
-    font-size: 50px;
-    color: var(--dark-teal);
+  margin-left: 40vh;
+  font-size: 50px;
+  color: var(--dark-teal);
 }
 
 .board-text-owner {
-    margin-left: 150vh;
-    font-size: x-large;
-    display: relative;
+  margin-left: 150vh;
+  font-size: x-large;
+  display: relative;
 }
 
 .board-container {
   margin-left: 40vh;
+  min-height: 550px;
 }
 
 .ul-cards {
