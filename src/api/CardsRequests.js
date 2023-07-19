@@ -12,11 +12,11 @@ export const postCard = async (newCard, id) => {
   }
 };
 
-export const updateCard = async (newCard, id) => {
+export const updateCard = async (message, id) => {
   try {
     const response = await axios.put(
-      `https://cada-inspo-board.onrender.com/boards/${id}/cards`, 
-      newCard,
+      `https://cada-inspo-board.onrender.com/cards/${id}`,
+      {message: message},
     );
     return response.data;
   } catch (error) {
