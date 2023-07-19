@@ -5,6 +5,7 @@ import "./Card.css";
 const Card = ({ id, message, likesCount, refetchCards }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedMessage, setEditedMessage] = useState(message);
+  const [warning, setWarning] = useState("");
 
   const onLike = () => {
     putLikeCard(id).then(() => {
@@ -19,6 +20,7 @@ const Card = ({ id, message, likesCount, refetchCards }) => {
   };
 
   const handleEdit = () => {
+    setWarning("");
     setIsEditing(true);
   };
 
@@ -29,6 +31,13 @@ const Card = ({ id, message, likesCount, refetchCards }) => {
   };
 
   const handleSave = () => {
+    if (editedMessage.trim() === "") {
+      setWarning("Message must not be blank.");
+      return;
+    } else if (editedMessage.length > 40) {
+      setWarning("Max 40 characters.");
+      return;
+    }
     onUpdateCard(editedMessage, id);
     setIsEditing(false);
   };
@@ -46,13 +55,16 @@ const Card = ({ id, message, likesCount, refetchCards }) => {
   return (
     <section className="card">
       {isEditing ? (
-        <textarea
-          value={editedMessage}
-          onChange={handleInputChange}
-          onBlur={handleSave}
-          onKeyDown={handleKeyDown}
-          className="editable-text"
-        />
+        <>
+          <textarea
+            value={editedMessage}
+            onChange={handleInputChange}
+            onBlur={handleSave}
+            onKeyDown={handleKeyDown}
+            className="editable-text"
+          />
+          <p className="warning-card">{warning}</p>
+        </>
       ) : (
         <p className="text" onClick={handleEdit}>
           {message}
