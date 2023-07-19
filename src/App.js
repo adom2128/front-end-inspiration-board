@@ -18,11 +18,7 @@ function App() {
   };
 
   useEffect(() => {
-    const fetchBoardList = async () => {
-      const retrieveBoards = await getAllBoards();
-      setBoards(retrieveBoards);
-    };
-    fetchBoardList();
+    refetchBoards()
   }, []);
 
   const onBoardFormSubmit = (newBoard) => {

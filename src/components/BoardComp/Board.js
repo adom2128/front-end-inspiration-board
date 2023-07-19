@@ -16,6 +16,11 @@ const Board = ({ boardID, refetchBoards }) => {
     setCards(retrievecards);
   };
 
+  const fetchBoard = async () => {
+    const selectedBoard = await getOneBoard(boardID);
+    setBoard(selectedBoard);
+  };
+
   const onDelete = () => {
     deleteOneBoard(boardID).then(() => {
       refetchBoards();
@@ -27,13 +32,8 @@ const Board = ({ boardID, refetchBoards }) => {
 
   useEffect(() => {
     if (boardID) {
-      const fetchBoard = async () => {
-        const selectedBoard = await getOneBoard(boardID);
-        const retrievecards = await getCards(boardID);
-        setBoard(selectedBoard);
-        setCards(retrievecards);
-      };
       fetchBoard();
+      refetchCards();
       setShowForm(true);
     }
   }, [boardID]);

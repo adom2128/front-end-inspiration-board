@@ -9,7 +9,6 @@ const NewCardForm = ({ onCardFormSubmit }) => {
         setNewCardMessage(event.target.value);
     };
 
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
