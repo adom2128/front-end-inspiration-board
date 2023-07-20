@@ -31,7 +31,7 @@
   box-shadow: -2.5px 2.5px 2.5px #d3d3d3;
   cursor: pointer;
 }
-.sort-cards{
+.sort-cards {
   position: absolute;
   top: 23%;
   left: 21%;
@@ -39,8 +39,7 @@
   color: var(--dark-teal);
 }
 
-
-.select-sort-cards{
+.select-sort-cards {
   position: absolute;
   top: 27%;
   left: 21%;

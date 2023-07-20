@@ -50,12 +50,12 @@ function App() {
           />
         </div>
       </main>
-      <footer className="App__footer">
+      {/* <footer className="App__footer">
         <div>
           &copy; 2023 Alejandra Dominguez, Angie Tran, Cindy Vides, Danica
           Sarmiento
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

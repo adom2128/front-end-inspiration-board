@@ -29,12 +29,14 @@
   color: black;
   font-family: "Varela Round";
   position: relative;
-  left: 20rem; /* Use a small left margin using rem unit */
-  bottom: 1rem;
+  /* left: 20rem; */
+  /* bottom: 1rem; */
   display: flex;
-  justify-content: flex-start;
-  width: 100%;
+  /* justify-content: flex-start; */
+  /* width: 100%; */
   /* background: white; */
+  left: 45vh;
+  width: 50%;
 }
 
 body {
