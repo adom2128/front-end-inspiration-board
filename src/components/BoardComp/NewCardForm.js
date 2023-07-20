@@ -36,7 +36,7 @@ const NewCardForm = ({ onCardFormSubmit }) => {
       {newCardMessage === "" && (
         <div className="warning"> Please fill out all fields.</div>
       )}
-      {newCardMessage.length >= 40 && (
+      {newCardMessage.length > 40 && (
         <div className="warning"> Max 40 characters please.</div>
       )}
       <div>
@@ -44,7 +44,7 @@ const NewCardForm = ({ onCardFormSubmit }) => {
           className="new-card-form-btn"
           type="submit"
           value="add card"
-          disabled={newCardMessage === "" || newCardMessage.length >= 40}
+          disabled={newCardMessage === "" || newCardMessage.length > 40}
         />
       </div>
     </form>
