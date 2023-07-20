@@ -44,16 +44,46 @@ const Board = ({ boardID, refetchBoards }) => {
     });
   };
 
+  const handleSortCards = (value) => {
+    if(value === 'likes_count'){
+      return [...cards.sort((card1, card2) => {
+        if (card1[value] === card2[value]) return 0
+        else if (card1[value] < card2[value]) return 1
+        else return -1
+      })]
+    }
+    return[...cards.sort((card1, card2) => {
+      if (card1[value] === card2[value]) return 0
+      else if (card1[value] > card2[value]) return 1
+      else return -1
+    })]
+  }
+
+  const sortCards = (value) => {
+    const sortedCards = handleSortCards(value)
+    setCards(sortedCards)
+  }
+
+  const boardExists = Object.keys(board).length > 0
   return (
     <section className="board">
+      <div> 
+        {boardExists && (
+          <select className="select-sort-cards" 
+            onChange={(event) => sortCards(event.target.value)}>
+            <option value="card_id">ID</option>
+            <option value="message">Message</option>
+            <option value="likes_count">Likes</option>
+          </select>)}
+        </div>
       <div>
-        {Object.keys(board).length > 0 && (
-          <button className="delete-board" onClick={onDelete}>
-            X
-          </button>
-        )}
+        {boardExists && ( 
+        <h3 className="sort-cards">sort cards by:</h3>)}
+      </div> 
+      <div>
+        {boardExists > 0 && (
+          <button className="delete-board" onClick={onDelete}>X</button>)}
       </div>
-
       <h2 className="board-text-title">{board?.title}</h2>
       <div className="board-container">
         <ul className="ul-cards">
