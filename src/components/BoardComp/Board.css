@@ -31,3 +31,23 @@
   box-shadow: -2.5px 2.5px 2.5px #d3d3d3;
   cursor: pointer;
 }
+.sort-cards{
+  position: absolute;
+  top: 23%;
+  left: 21%;
+  margin: 10px;
+  color: var(--dark-teal);
+}
+
+
+.select-sort-cards{
+  position: absolute;
+  top: 27%;
+  left: 21%;
+  margin: 10px;
+  border-style: none;
+  background-color: white;
+  font-size: 18px;
+  font-family: "Varela Round";
+  box-shadow: -2.5px 2.5px 2.5px #d3d3d3;
+}
