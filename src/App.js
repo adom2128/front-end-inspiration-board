@@ -18,11 +18,7 @@ function App() {
   };
 
   useEffect(() => {
-    const fetchBoardList = async () => {
-      const retrieveBoards = await getAllBoards();
-      setBoards(retrieveBoards);
-    };
-    fetchBoardList();
+    refetchBoards();
   }, []);
 
   const onBoardFormSubmit = (newBoard) => {
@@ -39,6 +35,7 @@ function App() {
       <main>
         <div id="sidebar">
           <BoardList
+            key={boardID}
             boards={boards}
             onSelectBoard={onSelectBoard}
             refetchBoards={refetchBoards}
@@ -46,7 +43,11 @@ function App() {
           />
         </div>
         <div id="content">
-          <Board boardID={boardID} refetchBoards={refetchBoards} />
+          <Board
+            key={boardID}
+            boardID={boardID}
+            refetchBoards={refetchBoards}
+          />
         </div>
       </main>
       <footer className="App__footer">

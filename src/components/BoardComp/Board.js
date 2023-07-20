@@ -16,6 +16,11 @@ const Board = ({ boardID, refetchBoards }) => {
     setCards(retrievecards);
   };
 
+  const fetchBoard = async () => {
+    const selectedBoard = await getOneBoard(boardID);
+    setBoard(selectedBoard);
+  };
+
   const onDelete = () => {
     deleteOneBoard(boardID).then(() => {
       refetchBoards();
@@ -27,13 +32,8 @@ const Board = ({ boardID, refetchBoards }) => {
 
   useEffect(() => {
     if (boardID) {
-      const fetchBoard = async () => {
-        const selectedBoard = await getOneBoard(boardID);
-        const retrievecards = await getCards(boardID);
-        setBoard(selectedBoard);
-        setCards(retrievecards);
-      };
       fetchBoard();
+      refetchCards();
       setShowForm(true);
     }
   }, [boardID]);
@@ -47,10 +47,11 @@ const Board = ({ boardID, refetchBoards }) => {
   return (
     <section className="board">
       <div>
-              {Object.keys(board).length > 0 && (
-        <button className="delete-board" onClick={onDelete}>
-          X
-        </button>)}
+        {Object.keys(board).length > 0 && (
+          <button className="delete-board" onClick={onDelete}>
+            X
+          </button>
+        )}
       </div>
 
       <h2 className="board-text-title">{board?.title}</h2>
@@ -59,15 +60,15 @@ const Board = ({ boardID, refetchBoards }) => {
           {cards &&
             cards.map((card) => (
               <Card
+                key={card.card_id}
                 id={card.card_id}
                 message={card.message}
                 likesCount={card.likes_count}
                 refetchCards={refetchCards}
               />
             ))}
-            {showForm && <NewCardForm onCardFormSubmit={onCardFormSubmit} />}
+          {showForm && <NewCardForm onCardFormSubmit={onCardFormSubmit} />}
         </ul>
-        
       </div>
       <h2 className="board-text-owner">{board?.owner}</h2>
     </section>
